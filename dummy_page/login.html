@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        
+        <style>
+            body
+                {background-image: url(background.png);
+                justify-content: center;
+                background-position: center;
+                background-repeat: no-repeat;
+                font-family: sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f0f0f0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+    
+            }
+            .container {
+                background-color: #264ECA;
+                padding: 100px;
+                border-radius: 40px;
+                text-align: center;
+                box-shadow: #264ECA;
+                justify-content: center
+            }
+            
+        </style>
+        
+    </head>
+    <body>
+      
+        <div class="container">
+            <div class="cartimage">
+                <img src="D:\Work project\dummy_page\upperpart.png">
+            </div>
+           <form class="form">
+                <div class="email">
+                    <input type="email" id="emailInput" placeholder="email" autocomplete="off" required>
+                </div>
+                <div class="password">
+                    <input type="password" id="passwordInput" placeholder="password" autocomplete="off"required>
+                </div>
+                <div class="submit-btn">
+                    <button type="submit">Login</button>
+                </div>
+                <div class="forgotpassword">
+                    <button type="button">Forgot password?</button>
+                
+                </div>
+
+            </form> 
+            
+
+        </div>
+        <script>
+            const emailInput = document.getElementById('emailInput');
+            const passwordInput = document.getElementById('passwordInput');
+
+            function showErrorMessage(message) {
+                alert(message); 
+            }
+
+            const form = document.querySelector('.form');
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const email = emailInput.value.trim();
+                const password = passwordInput.value.trim();  
+
+                if (email === 'test@luxpmsoft.com' && password === 'test1234!') {
+                    showErrorMessage('Login successful!');
+                } else {
+                    showErrorMessage('Invalid email or password. Please try again.');
+                }
+            });
+        </script>
+    </body>
+</html>
